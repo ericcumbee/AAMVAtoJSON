@@ -1,8 +1,5 @@
-// https://www.aamva.org/dl-id-card-design-standard/
-// 2013 AAMVA DL/ID Card Design Standard
-// D.13 Example of raw PDF417 data
-
-var data = [
+const {AAMVAtoJSON} = require('./AAMVAtoJSON');
+let data = [
     "@\n\u001e\r",
     "ANSI 636000080002DL00410278ZV03190008DLDAQT64235789L\n",
     "DCSSAMPLE\n",
@@ -34,5 +31,6 @@ var data = [
     "DDD1\r",
     "ZVZVA01\r"
 ].join("");
+let sc = '@\n\x1c\rANSI 6360050101DL00300201DLDAQ102245737\nDAASAMPLE,DRIVER,CREDENTIAL,\nDAG1500 PARK ST\nDAICOLUMBIA\nDAJSC\nDAK292012731  \nDARD   \nDAS          \nDAT     \nDAU600\nDAW200\nDAY   \nDAZ   \nDBA20190928\nDBB19780928\nDBC1\nDBD20091026\nDBG2\nDBH1\r\r\n'
 
-AAMVAtoJSON(data);
+console.log(AAMVAtoJSON(sc));
